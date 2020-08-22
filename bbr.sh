@@ -330,18 +330,6 @@ reboot_os() {
 }
 
 install_bbr() {
-    if check_bbr_status; then
-        echo
-        _info "TCP BBR has already been enabled. nothing to do..."
-        exit 0
-    fi
-    if check_kernel_version; then
-        echo
-        _info "The kernel version is greater than 4.9, directly setting TCP BBR..."
-        sysctl_config
-        _info "Setting TCP BBR completed..."
-        exit 0
-    fi
     check_os
     install_kernel
     sysctl_config
