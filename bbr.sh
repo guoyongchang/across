@@ -330,7 +330,6 @@ reboot_os() {
 }
 
 install_bbr() {
-    check_os
     install_kernel
     sysctl_config
     reboot_os
